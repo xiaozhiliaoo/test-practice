@@ -10,7 +10,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>unit-test</module>
-        <module>benchmark-test</module>
+        <module>bench-test</module>
+        <module>junit5-test</module>
     </modules>
 
 
