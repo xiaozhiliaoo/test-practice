@@ -49,12 +49,9 @@ public class TestWebClient {
     private WebClient client = new WebClient();
 
     @BeforeClass
-    public static void setUp()
-            throws Exception {
+    public static void setUp() throws Exception {
         Server server = new Server(8080);
-
         TestWebClient t = new TestWebClient();
-
         Context contentOkContext = new Context(server, "/testGetContentOk");
         contentOkContext.setHandler(t.new TestGetContentOkHandler());
 
@@ -98,8 +95,7 @@ public class TestWebClient {
     /**
      * Handler to handle the good requests to the server.
      */
-    private class TestGetContentOkHandler
-            extends AbstractHandler {
+    private class TestGetContentOkHandler extends AbstractHandler {
         public void handle(String target, HttpServletRequest request, HttpServletResponse response, int dispatch)
                 throws IOException, ServletException {
 
@@ -116,8 +112,7 @@ public class TestWebClient {
     /**
      * Handler to handle bad requests to the server
      */
-    private class TestGetContentServerErrorHandler
-            extends AbstractHandler {
+    private class TestGetContentServerErrorHandler extends AbstractHandler {
 
         public void handle(String target, HttpServletRequest request, HttpServletResponse response, int dispatch)
                 throws IOException, ServletException {
@@ -128,8 +123,7 @@ public class TestWebClient {
     /**
      * Handler to handle requests that request unavailable content.
      */
-    private class TestGetContentNotFoundHandler
-            extends AbstractHandler {
+    private class TestGetContentNotFoundHandler extends AbstractHandler {
 
         public void handle(String target, HttpServletRequest request, HttpServletResponse response, int dispatch)
                 throws IOException, ServletException {

@@ -12,6 +12,8 @@
         <module>unit-test</module>
         <module>bench-test</module>
         <module>junit5-test</module>
+        <module>hamcrest-test</module>
+        <module>easymock</module>
     </modules>
 
 
