@@ -16,6 +16,9 @@
         <module>easymock</module>
         <module>jmockit</module>
         <module>unitils</module>
+        <module>powermock</module>
+        <module>mockito</module>
+        <module>assertj</module>
     </modules>
 
     <properties>
@@ -25,17 +28,28 @@
         <junit.jupiter.version>5.6.2</junit.jupiter.version>
     </properties>
 
-    <dependencies>
+    <dependencyManagement>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <version>${junit.jupiter.version}</version>
-            <scope>test</scope>
-        </dependency>
+        <dependencies>
 
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit.jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
 
-    </dependencies>
+            <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <artifactId>assertj-core</artifactId>
+                <version>3.18.1</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
+
 
     <build>
         <finalName>test-practice</finalName>
