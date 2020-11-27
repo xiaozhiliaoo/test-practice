@@ -19,6 +19,8 @@
         <module>powermock</module>
         <module>mockito</module>
         <module>assertj</module>
+        <module>jmock</module>
+        <module>objenesis</module>
     </modules>
 
     <properties>
@@ -63,6 +65,31 @@
                 <version>4.2</version>
                 <scope>test</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.easymock</groupId>
+                <artifactId>easymockclassextension</artifactId>
+                <version>3.2</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.jmock/jmock -->
+            <dependency>
+                <groupId>org.jmock</groupId>
+                <artifactId>jmock</artifactId>
+                <version>2.12.0</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.objenesis/objenesis -->
+            <dependency>
+                <groupId>org.objenesis</groupId>
+                <artifactId>objenesis</artifactId>
+                <version>3.1</version>
+                <scope>test</scope>
+            </dependency>
+
+
 
 
         </dependencies>
