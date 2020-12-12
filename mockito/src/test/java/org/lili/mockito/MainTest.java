@@ -120,12 +120,13 @@ class MainTest {
         List list = new LinkedList();
         List spy = spy(list);
 
-        //optionally, you can stub out some methods:
+        //optionally, you can stub out some methods: 仅仅spy了这一个方法，而不是所有类的所有方法
         when(spy.size()).thenReturn(100);
 
         //using the spy calls *real* methods
         spy.add("one");
         spy.add("two");
+        System.out.println(spy.contains("one"));
 
         //prints "one" - the first element of a list
         System.out.println(spy.get(0));
@@ -136,6 +137,65 @@ class MainTest {
         //optionally, you can verify
         verify(spy).add("one");
         verify(spy).add("two");
+
+        System.out.println(spy);
+    }
+
+    @Test
+    public void testMock() {
+        List mock = mock(LinkedList.class);
+
+        //
+        when(mock.size()).thenReturn(100);
+
+        //using the mock calls mock methods
+        mock.add("one");
+        mock.add("two");
+        System.out.println(mock.contains("one"));
+
+
+        //prints "null"
+        System.out.println(mock.get(0));
+
+        //size() method was stubbed - 100 is printed
+        System.out.println(mock.size());
+
+        //optionally, you can verify
+        verify(mock).add("one");
+        verify(mock).add("two");
+
+        System.out.println(mock);
+    }
+
+
+    @Test
+    public void testSpy2() {
+
+        List list = new LinkedList();
+        List spy = spy(list);
+
+        try {
+            when(spy.get(0)).thenReturn("foo");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        doReturn("foo").when(spy).get(0);
+
+        System.out.println(spy.get(0));
+    }
+
+    @Test
+    public void testMock2() {
+        //整个类或者接口mock了
+        List mock = mock(LinkedList.class);
+
+
+        when(mock.get(0)).thenReturn("foo");
+
+        //doReturn("foo").when(mock).get(0);
+
+        System.out.println(mock.get(0));
     }
 
 
