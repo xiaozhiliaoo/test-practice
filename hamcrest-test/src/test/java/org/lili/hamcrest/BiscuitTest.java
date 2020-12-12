@@ -10,9 +10,16 @@ import static org.hamcrest.Matchers.is;
  * @date 2020/8/7 18:15
  * @notes
  */
+
 public class BiscuitTest {
     @Test
     public void testEquals() {
         assertThat("this", true);
     }
+
+    @Test
+    public void testSquareRootOfMinusOneIsNotANumber() {
+        assertThat(1, is(1));
+    }
+
 }
