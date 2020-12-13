@@ -4,6 +4,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.lili.test.anno.Fast;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,4 +35,12 @@ class CalculatorTest {
         assertEquals(expectedResult, calculator.add(first, second),
                 () -> first + " + " + second + " should equal " + expectedResult);
     }
+
+    @Fast
+    @Test
+    public void fast() {
+        System.out.println(1);
+    }
+
+
 }
