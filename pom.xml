@@ -23,6 +23,7 @@
         <module>objenesis</module>
         <module>truth</module>
         <module>xunitpatterns</module>
+        <module>cucumber</module>
     </modules>
 
     <properties>
@@ -30,11 +31,39 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <cucumber.version>6.9.1</cucumber.version>
+        <cucumber-junit.version>6.9.1</cucumber-junit.version>
     </properties>
 
     <dependencyManagement>
 
         <dependencies>
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-junit</artifactId>
+                <version>${cucumber-junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+
+
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java8</artifactId>
+                <version>6.8.1</version>
+                <scope>test</scope>
+            </dependency>
+
+
+            <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+            <dependency>
+                <groupId>io.cucumber</groupId>
+                <artifactId>cucumber-java</artifactId>
+                <version>6.9.1</version>
+            </dependency>
+
+
 
             <dependency>
                 <groupId>org.junit.jupiter</groupId>
