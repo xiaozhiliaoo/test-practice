@@ -17,16 +17,16 @@ import static org.mockito.Mockito.*;
  * @date 2020/11/25 23:38
  * @notes
  */
-class MainTest {
+class MockitoCoreTest {
 
     @Test
-    public void testFinalClass() {
+    void testFinalClass() {
         String mock = mock(String.class);
         System.out.println(mock);
     }
 
     @Test
-    public void testInterface() {
+    void testInterface() {
         List mock = mock(List.class);
         mock.add("lulul");
 //        verify(mock).add("llili");
@@ -35,14 +35,14 @@ class MainTest {
     }
 
     @Test
-    public void testArrayList() {
+    void testArrayList() {
         ArrayList list = mock(ArrayList.class);
         given(list.get(1)).willReturn("11111");
         assertThat("11111").isEqualTo(list.get(1));
     }
 
     @Test
-    public void testList() {
+    void testList() {
         List mock = mock(List.class);
         mock.add("one");
         mock.clear();
@@ -53,7 +53,7 @@ class MainTest {
     }
 
     @Test
-    public void testLinkedList() {
+    void testLinkedList() {
         //stubbing
         LinkedList mockedList = mock(LinkedList.class);
         when(mockedList.get(0)).thenReturn("first");
@@ -62,7 +62,7 @@ class MainTest {
     }
 
     @Test
-    public void testVerify() {
+    void testVerify() {
 
         LinkedList mockedList = mock(LinkedList.class);
 //        when(mockedList.get(anyInt())).thenReturn("element");
@@ -92,7 +92,7 @@ class MainTest {
     }
 
     @Test
-    public void testVerifyInOrder() {
+    void testVerifyInOrder() {
         List singleMock = mock(List.class);
         singleMock.add("was added first");
         singleMock.add("was added second");
@@ -116,7 +116,7 @@ class MainTest {
     }
 
     @Test
-    public void testSpy() {
+    void testSpy() {
         List list = new LinkedList();
         List spy = spy(list);
 
@@ -142,7 +142,7 @@ class MainTest {
     }
 
     @Test
-    public void testMock() {
+    void testMock() {
         List mock = mock(LinkedList.class);
 
         //
@@ -169,7 +169,7 @@ class MainTest {
 
 
     @Test
-    public void testSpy2() {
+    void testSpy2() {
 
         List list = new LinkedList();
         List spy = spy(list);
@@ -186,7 +186,7 @@ class MainTest {
     }
 
     @Test
-    public void testMock2() {
+    void testMock2() {
         //整个类或者接口mock了
         List mock = mock(LinkedList.class);
 
