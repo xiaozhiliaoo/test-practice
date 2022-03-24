@@ -1,7 +1,5 @@
 package org.lili.mockito;
 
-import org.junit.jupiter.api.Test;
-
 /**
  *
  * @author lili

@@ -1,7 +1,11 @@
 package org.lili.mockito;
 
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InOrder;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -13,11 +17,26 @@ import static org.mockito.Mockito.*;
 
 
 /**
+ * 这里面例子来自https://javadoc.io/static/org.mockito/mockito-core/4.4.0/index.html
+ *
  * @author lili
  * @date 2020/11/25 23:38
  * @notes
  */
 class MockitoCoreTest {
+
+    @BeforeEach
+    void beforeEach() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Mock
+    private List<String> aaa;
+
+    @Test
+    void testListAAA() {
+
+    }
 
     @Test
     void testFinalClass() {

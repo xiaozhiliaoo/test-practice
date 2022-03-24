@@ -24,6 +24,7 @@
         <module>truth</module>
         <module>xunitpatterns</module>
         <module>cucumber</module>
+        <module>tdd</module>
     </modules>
 
     <properties>
@@ -78,6 +79,13 @@
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>5.7.0</version>
                 <scope>${junit.jupiter.version}</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-junit-jupiter</artifactId>
+                <version>4.4.0</version>
+                <scope>test</scope>
             </dependency>
 
 
